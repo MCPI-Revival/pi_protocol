@@ -1,6 +1,6 @@
 {
     "LoginPacket": {
-        "id": 0x82,
+        "id": "0x82",
         "sentFrom": "client",
         "fields": {
             "username": "String",
@@ -9,14 +9,14 @@
         }
     },
     "LoginStatusPacket": {
-        "id": 0x83,
+        "id": "0x83",
         "sentFrom": "server",
         "fields": {
             "status": "UnsignedIntBE"
         }
     },
     "ReadyPacket": {
-        "id": 0x83,
+        "id": "0x83",
         "sentFrom": "client",
         "fields": {
             "status": "UnsignedByte"
