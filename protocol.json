@@ -16,10 +16,17 @@
         }
     },
     "ReadyPacket": {
-        "id": "0x83",
+        "id": "0x84",
         "sentFrom": "client",
         "fields": {
             "status": "UnsignedByte"
+        }
+    },
+    "MessagePacket": {
+        "id": "0x85",
+        "sentFrom": "server",
+        "fields": {
+            "message": "String"
         }
     }
 }
