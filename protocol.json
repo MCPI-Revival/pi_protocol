@@ -33,7 +33,20 @@
         "id": "0x86",
         "sentFrom": "server",
         "fields": {
-            "time": "UnsignedLongBE"
+            "time": "UnsignedIntBE"
+        }
+    },
+    "StartGamePacket": {
+        "id": "0x87",
+        "sentFrom": "server",
+        "fields": {
+            "seed": "UnsignedIntBE",
+            "generator": "UnsignedIntBE",
+            "gamemode": "UnsignedIntBE",
+            "entityId": "UnsignedIntBE",
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE"
         }
     }
 }
