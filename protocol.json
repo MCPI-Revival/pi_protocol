@@ -1,5 +1,25 @@
 {
-    "LoginPacket",
-    "LoginStatusPacket",
-    "ReadyPacket"
+    "LoginPacket": {
+        "id": 0x82,
+        "sentFrom": "client",
+        "fields": {
+            "username": "String",
+            "protocol1": "UnsignedIntBE",
+            "protocol2": "UnsignedIntBE"
+        }
+    },
+    "LoginStatusPacket": {
+        "id": 0x83,
+        "sentFrom": "server",
+        "fields": {
+            "status": "UnsignedIntBE"
+        }
+    },
+    "ReadyPacket": {
+        "id": 0x83,
+        "sentFrom": "client",
+        "fields": {
+            "status": "UnsignedByte"
+        }
+    }
 }
