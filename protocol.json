@@ -28,5 +28,12 @@
         "fields": {
             "message": "String"
         }
+    },
+    "SetTimePacket": {
+        "id": "0x86",
+        "sentFrom": "server",
+        "fields": {
+            "time": "UnsignedLongBE"
+        }
     }
 }
