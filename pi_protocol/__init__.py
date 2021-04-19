@@ -137,4 +137,5 @@ def encode_data_type(data_type: str, value: Union[int, float, str], stream: obje
         stream.write(value.encode())
     
 def decode_packet(data: bytes) -> dict:
-    pass
+    stream = binary_stream(data)
+    packet_id: int = stream.read_unsigned_byte()
