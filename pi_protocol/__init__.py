@@ -39,6 +39,11 @@ protocol: dict = json.load(open(get_data_folder() + "/protocol.json", "rt"))
 def get_data_folder() -> str:
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
 
+def get_packet_fields(packet_id: int) -> dict:
+    for packet in protocol:
+        if packet["id"] == packet_id:
+            return packet["fields"]
+
 def decode_data_type(data_type: str, stream: object) -> Union[int, float, str]:
     if data_type == "UnsignedByte":
         return stream.read_unsigned_byte()
@@ -139,3 +144,11 @@ def encode_data_type(data_type: str, value: Union[int, float, str], stream: obje
 def decode_packet(data: bytes) -> dict:
     stream = binary_stream(data)
     packet_id: int = stream.read_unsigned_byte()
+    packet_fields: dict = get_packet_fields(packet_id)
+    if packet_fields is not None:
+        packet: dict = {"id": packet_id}
+        for field_name, field_type in packet_fields.items():
+            packet[field_name]: Union[int, float, str] = decode_data_type(field_type, stream)
+        return packet
+    else:
+        return {}
