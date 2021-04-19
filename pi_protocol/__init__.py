@@ -87,21 +87,21 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str]:
 def encode_data_type(data_type: str, value: Union[int, float, str], stream: object) -> None:
     if data_type == "UnsignedByte":
         stream.write_unsigned_byte(value)
-    if data_type == "Byte":
+    elif data_type == "Byte":
         stream.write_byte(value)
-    if data_type == "UnsignedShortBE":
+    elif data_type == "UnsignedShortBE":
         stream.write_unsigned_short_be(value)
-    if data_type == "ShortBE":
+    elif data_type == "ShortBE":
         stream.write_short_be(value)
-    if data_type == "UnsignedShortLE":
+    elif data_type == "UnsignedShortLE":
         stream.write_unsigned_short_le(value)
-    if data_type == "ShortLE":
+    elif data_type == "ShortLE":
         stream.write_short_le(value)
-    if data_type == "UnsignedTriadBE":
+    elif data_type == "UnsignedTriadBE":
         stream.write_unsigned_triad_be(value)
-    if data_type == "TriadBE":
+    elif data_type == "TriadBE":
         stream.write_triad_be(value)
-    if data_type == "UnsignedTriadLE":
+    elif data_type == "UnsignedTriadLE":
         stream.write_unsigned_triad_le(value)
     elif data_type == "TriadLE":
         stream.write_triad_le(value)
