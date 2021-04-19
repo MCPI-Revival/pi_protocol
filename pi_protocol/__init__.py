@@ -80,6 +80,8 @@ def decode_data_type(data_type: str, stream: object) -> object:
         return stream.read_double_be()
     if data_type == "DoubleLE":
         return stream.read_double_le()
+    if data_type == "String":
+        return stream.read(stream.read_unsigned_short_be())
 
 def decode_packet(data: bytes) -> dict:
     pass
