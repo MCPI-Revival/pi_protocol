@@ -1,6 +1,6 @@
 {
     "LoginPacket": {
-        "id": "0x82",
+        "id": 130,
         "sentFrom": "client",
         "fields": {
             "username": "String",
@@ -9,35 +9,35 @@
         }
     },
     "LoginStatusPacket": {
-        "id": "0x83",
+        "id": 131,
         "sentFrom": "server",
         "fields": {
             "status": "UnsignedIntBE"
         }
     },
     "ReadyPacket": {
-        "id": "0x84",
+        "id": 132,
         "sentFrom": "client",
         "fields": {
             "status": "UnsignedByte"
         }
     },
     "MessagePacket": {
-        "id": "0x85",
+        "id": 133,
         "sentFrom": "server",
         "fields": {
             "message": "String"
         }
     },
     "SetTimePacket": {
-        "id": "0x86",
+        "id": 134,
         "sentFrom": "server",
         "fields": {
             "time": "UnsignedIntBE"
         }
     },
     "StartGamePacket": {
-        "id": "0x87",
+        "id": 135,
         "sentFrom": "server",
         "fields": {
             "seed": "UnsignedIntBE",
