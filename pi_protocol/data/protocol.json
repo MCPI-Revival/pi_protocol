@@ -48,5 +48,19 @@
             "y": "FloatBE",
             "z": "FloatBE"
         }
+    },
+    "AddMobPacket": {
+        "id": 136,
+        "sentFrom": "server",
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "type": "UnsignedIntBE",
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE",
+            "pitch": "Byte",
+            "yaw": "Byte",
+            "metadata": "Metadata"
+        }
     }
 }
