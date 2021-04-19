@@ -40,7 +40,7 @@ def get_data_folder() -> str:
 protocol: dict = json.load(open(get_data_folder() + "/protocol.json", "rt"))
 
 def get_packet_fields(packet_id: int) -> dict:
-    for packet in protocol:
+    for packet in protocol.values():
         if packet["id"] == packet_id:
             return packet["fields"]
 
