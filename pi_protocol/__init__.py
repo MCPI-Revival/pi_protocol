@@ -34,10 +34,10 @@ import json
 import os
 from typing import Union
 
-protocol: dict = json.load(open(get_data_folder() + "/protocol.json", "rt"))
-
 def get_data_folder() -> str:
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
+
+protocol: dict = json.load(open(get_data_folder() + "/protocol.json", "rt"))
 
 def get_packet_fields(packet_id: int) -> dict:
     for packet in protocol:
