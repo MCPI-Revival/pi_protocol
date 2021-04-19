@@ -82,7 +82,56 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str]:
     if data_type == "DoubleLE":
         return stream.read_double_le()
     if data_type == "String":
-        return stream.read(stream.read_unsigned_short_be())
+        return stream.read(stream.read_unsigned_short_be()).decode()
 
+def encode_data_type(data_type: str, value: Union[int, float, str], stream: object) -> None:
+    if data_type == "UnsignedByte":
+        stream.write_unsigned_byte(value)
+    if data_type == "Byte":
+        stream.write_byte(value)
+    if data_type == "UnsignedShortBE":
+        stream.write_unsigned_short_be(value)
+    if data_type == "ShortBE":
+        stream.write_short_be(value)
+    if data_type == "UnsignedShortLE":
+        stream.write_unsigned_short_le(value)
+    if data_type == "ShortLE":
+        stream.write_short_le(value)
+    if data_type == "UnsignedTriadBE":
+        stream.write_unsigned_triad_be(value)
+    if data_type == "TriadBE":
+        stream.write_triad_be(value)
+    if data_type == "UnsignedTriadLE":
+        stream.write_unsigned_triad_le(value)
+    elif data_type == "TriadLE":
+        stream.write_triad_le(value)
+    elif data_type == "UnsignedIntBE":
+        stream.write_unsigned_int_be(value)
+    elif data_type == "IntBE":
+        stream.write_int_be(value)
+    elif data_type == "UnsignedIntLE":
+        stream.write_unsigned_int_le(value)
+    elif data_type == "IntLE":
+        stream.write_int_le(value)
+    elif data_type == "UnsignedLongBE":
+        stream.write_unsigned_long_be(value)
+    elif data_type == "LongBE":
+        stream.write_long_be(value)
+    elif data_type == "UnsignedLongLE":
+        stream.write_unsigned_long_le(value)
+    elif data_type == "LongLE":
+        stream.write_long_le(value)
+    elif data_type == "FloatBE":
+        stream.write_float_be(value)
+    elif data_type == "FloatLE":
+        stream.write_float_le(value)
+    elif data_type == "DoubleBE":
+        stream.write_double_be(value)
+    elif data_type == "DoubleLE":
+        stream.write_double_le(value)
+    elif data_type == "String":
+        stream.write_unsigned_short_be(len(value))
+        stream.write(value.encode())
+    
 def decode_packet(data: bytes) -> dict:
     pass
