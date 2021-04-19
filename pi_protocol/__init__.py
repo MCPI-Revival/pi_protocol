@@ -152,7 +152,7 @@ def decode_packet(data: bytes) -> dict:
     if packet_fields is not None:
         packet: dict = {"id": packet_id}
         for field_name, field_type in packet_fields.items():
-            packet[field_name]: Union[int, float, str] = decode_data_type(field_type, stream)
+            packet[field_name]: Union[int, float, str, dict] = decode_data_type(field_type, stream)
         return packet
     else:
         return {}
