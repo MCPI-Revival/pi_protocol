@@ -157,6 +157,9 @@ def encode_packet(packet: dict) -> bytes:
     stream: object = binary_stream()
     packet_fields: dict = get_packet_fields(packet["id"])
     if packet_fields is not None:
+        stream.write_unsigned_byte(packet["id"])
         for field_name, field_type in packet_fields.items():
-            pass
-    
+            encode_data_type(field_type, packet[field_name], stream)
+        return stream.data
+    else:
+        return b""
