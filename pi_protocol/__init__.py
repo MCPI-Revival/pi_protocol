@@ -35,8 +35,11 @@ import os
 def get_data_folder() -> str:
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
 
-def decode_data_type(data_type: str, stream: object) -> None:
-    pass
+def decode_data_type(data_type: str, stream: object) -> object:
+    if data_type == "UnsignedByte":
+        return stream.read_unsigned_byte()
+    if data_type == "Byte":
+        return stream.read_byte()
 
 def decode_packet(data: bytes) -> dict:
     pass
