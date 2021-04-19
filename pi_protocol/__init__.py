@@ -44,7 +44,7 @@ def get_packet_fields(packet_id: int) -> dict:
         if packet["id"] == packet_id:
             return packet["fields"]
 
-def decode_data_type(data_type: str, stream: object) -> Union[int, float, str]:
+def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, dict]:
     if data_type == "UnsignedByte":
         return stream.read_unsigned_byte()
     if data_type == "Byte":
@@ -91,8 +91,10 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str]:
         return stream.read_double_le()
     if data_type == "String":
         return stream.read(stream.read_unsigned_short_be()).decode()
+    if data_type == "Metadata":
+        pass
 
-def encode_data_type(data_type: str, value: Union[int, float, str], stream: object) -> None:
+def encode_data_type(data_type: str, value: Union[int, float, str, dict], stream: object) -> None:
     if data_type == "UnsignedByte":
         stream.write_unsigned_byte(value)
     elif data_type == "Byte":
@@ -140,6 +142,8 @@ def encode_data_type(data_type: str, value: Union[int, float, str], stream: obje
     elif data_type == "String":
         stream.write_unsigned_short_be(len(value))
         stream.write(value.encode())
+    elif data_type == "Metadata":
+        pass
     
 def decode_packet(data: bytes) -> dict:
     stream: object = binary_stream(data)
