@@ -35,4 +35,5 @@ import struct
 def get_data_folder() -> str:
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
 
-def 
+def decode_packet(data: bytes) -> dict:
+    pass
