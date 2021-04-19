@@ -31,11 +31,12 @@
 
 from binary_utils.binary_stream import binary_stream
 import os
+from typing import Union
 
 def get_data_folder() -> str:
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
 
-def decode_data_type(data_type: str, stream: object) -> object:
+def decode_data_type(data_type: str, stream: object) -> Union[int, float, str]:
     if data_type == "UnsignedByte":
         return stream.read_unsigned_byte()
     if data_type == "Byte":
