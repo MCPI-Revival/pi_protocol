@@ -100,31 +100,31 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
             m_type: int = int(b / 32)
             if m_type == 0:
                 m_value: int = stream.read_byte()
-                result.append(m_value)
+                result.append([m_type, m_value])
             elif m_type == 1:
                 m_value: int = stream.read_short_le()
-                result.append(m_value)
+                result.append([m_type, m_value])
             elif m_type == 2:
                 m_value: int = stream.read_int_le()
-                result.append(m_value)
+                result.append([m_type, m_value])
             elif m_type == 3:
                 m_value: float = stream.read_float_le()
-                result.append(m_value)
+                result.append([m_type, m_value])
             elif m_type == 4:
                 m_value: str = stream.read(stream.read_unsigned_short_le())
-                result.append(m_value)
+                result.append([m_type, m_value])
             elif m_type == 5:
                 m_value: list = []
                 m_value.append(stream.read_short_le())
                 m_value.append(stream.read_byte())
                 m_value.append(stream.read_short_le())
-                result.append(m_value)
+                result.append([m_type, m_value])
             elif m_type == 6:
                 m_value: list = []
                 m_value.append(stream.read_int_le())
                 m_value.append(stream.read_int_le())
                 m_value.append(stream.read_int_le())
-                result.append(m_value)
+                result.append([m_type, m_value])
         return result
 
 def encode_data_type(data_type: str, value: Union[int, float, str, list], stream: object) -> None:
