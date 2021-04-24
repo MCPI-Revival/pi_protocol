@@ -143,7 +143,28 @@ def encode_data_type(data_type: str, value: Union[int, float, str, dict], stream
         stream.write_unsigned_short_be(len(value))
         stream.write(value.encode())
     elif data_type == "Metadata":
-        pass
+        for bottom, d in value.items():
+            stream.write_byte((d["type"] << 5) & (0xE0 | bottom))
+            if d["type"] == 0:
+                stream.write_byte(data["value"])
+            elif d["type"] == 1:
+                stream.write_short_le(data["value"])
+            elif d["type"] == 1:
+                stream.write_int_le(data["value"])
+            elif d["type"] == 1:
+                stream.write_float_le(data["value"])
+            elif d["type"] == 1:
+                stream.write_unsigned_short_le(len(data["value"]))
+                stream.write(data["value"].encode())
+            elif d["type"] == 1:
+                stream.write_short_le(data["value"][0])
+                stream.write_byte(data["value"][1])
+                stream.write_short_le(data["value"][2])
+            elif d["type"] == 1:
+                stream.write_int_le(data["value"][0])
+                stream.write_int_le(data["value"][1])
+                stream.write_int_le(data["value"][2])
+        stream.write_byte(0x7f)
     
 def decode_packet(data: bytes) -> dict:
     stream: object = binary_stream(data)
