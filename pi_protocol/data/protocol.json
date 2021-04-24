@@ -159,7 +159,7 @@
     },
     "MovePlayerPacket": {
         "id": 148,
-        "sentFrom": "server",
+        "sentFrom": "both",
         "fields": {
             "entityId": "UnsignedIntBE",
             "x": "FloatBE",
