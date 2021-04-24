@@ -110,5 +110,29 @@
         "fields": {
             "entityId": "UnsignedIntBE"
         }
+    },
+    "AddItemEntityPacket": {
+        "id": 142,
+        "sentFrom": "server",
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "block": "UnsignedShortBE",
+            "stack": "Byte",
+            "meta": "UnsignedShortBE",
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE",
+            "pitch": "Byte",
+            "yaw": "Byte",
+            "roll": "Byte"
+        }
+    },
+    "TakeItemEntityPacket": {
+        "id": 143,
+        "sentFrom": "server",
+        "fields": {
+            "target": "UnsignedIntBE",
+            "entityId": "UnsignedIntBE"
+        }
     }
 }
