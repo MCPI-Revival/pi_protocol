@@ -79,5 +79,13 @@
             "meta": "UnsignedShortBE",
             "metadata": "Metadata"
         }
+    },
+    "RemovePlayerPacket": {
+        "id": 138,
+        "sentFrom": "server",
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "clientId": "UnsignedLongBE"
+        }
     }
 }
