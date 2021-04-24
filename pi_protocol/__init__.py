@@ -44,7 +44,7 @@ def get_packet_fields(packet_id: int) -> dict:
         if packet["id"] == packet_id:
             return packet["fields"]
 
-def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, dict]:
+def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, list]:
     if data_type == "UnsignedByte":
         return stream.read_unsigned_byte()
     if data_type == "Byte":
@@ -94,7 +94,7 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, d
     if data_type == "Metadata":
         pass
 
-def encode_data_type(data_type: str, value: Union[int, float, str, dict], stream: object) -> None:
+def encode_data_type(data_type: str, value: Union[int, float, str, list], stream: object) -> None:
     if data_type == "UnsignedByte":
         stream.write_unsigned_byte(value)
     elif data_type == "Byte":
@@ -143,27 +143,27 @@ def encode_data_type(data_type: str, value: Union[int, float, str, dict], stream
         stream.write_unsigned_short_be(len(value))
         stream.write(value.encode())
     elif data_type == "Metadata":
-        for bottom, d in value.items():
-            stream.write_byte((d["type"] << 5) & (0xE0 | bottom))
-            if d["type"] == 0:
-                stream.write_byte(data["value"])
-            elif d["type"] == 1:
-                stream.write_short_le(data["value"])
-            elif d["type"] == 1:
-                stream.write_int_le(data["value"])
-            elif d["type"] == 1:
-                stream.write_float_le(data["value"])
-            elif d["type"] == 1:
-                stream.write_unsigned_short_le(len(data["value"]))
-                stream.write(data["value"].encode())
-            elif d["type"] == 1:
-                stream.write_short_le(data["value"][0])
-                stream.write_byte(data["value"][1])
-                stream.write_short_le(data["value"][2])
-            elif d["type"] == 1:
-                stream.write_int_le(data["value"][0])
-                stream.write_int_le(data["value"][1])
-                stream.write_int_le(data["value"][2])
+        for m_type, m_value in value:
+            stream.write_byte((m_type & 0x1f) | (m_type * 32))
+            if m_type == 0:
+                stream.write_byte(m_value)
+            elif m_type == 1:
+                stream.write_short_le(m_value)
+            elif m_type == 2:
+                stream.write_int_le(m_value)
+            elif m_type == 3:
+                stream.write_float_le(m_value)
+            elif m_type == 4:
+                stream.write_unsigned_short_le(len(m_value))
+                stream.write(m_value.encode())
+            elif m_type == 5:
+                stream.write_short_le(m_value[0])
+                stream.write_byte(m_value[1])
+                stream.write_short_le(m_value[2])
+            elif m_type == 6:
+                stream.write_int_le(m_value[0])
+                stream.write_int_le(m_value[1])
+                stream.write_int_le(m_value[2])
         stream.write_byte(0x7f)
     
 def decode_packet(data: bytes) -> dict:
@@ -173,7 +173,7 @@ def decode_packet(data: bytes) -> dict:
     if packet_fields is not None:
         packet: dict = {"id": packet_id}
         for field_name, field_type in packet_fields.items():
-            packet[field_name]: Union[int, float, str, dict] = decode_data_type(field_type, stream)
+            packet[field_name]: Union[int, float, str, list] = decode_data_type(field_type, stream)
         return packet
     else:
         return {}
