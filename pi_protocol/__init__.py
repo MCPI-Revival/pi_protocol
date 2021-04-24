@@ -94,7 +94,7 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
     if data_type == "Metadata":
         result: list = []
         while True:
-            b: int = stream.read_byte()
+            b: int = stream.read_unsigned_byte()
             if b == 127:
                 break
             m_type: int = int(b / 32)
@@ -177,7 +177,7 @@ def encode_data_type(data_type: str, value: Union[int, float, str, list], stream
         stream.write(value.encode())
     elif data_type == "Metadata":
         for m_type, m_value in value:
-            stream.write_byte((m_type & 0x1f) | (m_type * 32))
+            stream.write_unsigned_byte((m_type & 0x1f) | (m_type * 32))
             if m_type == 0:
                 stream.write_byte(m_value)
             elif m_type == 1:
