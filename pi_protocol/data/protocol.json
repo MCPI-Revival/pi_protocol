@@ -134,5 +134,27 @@
             "target": "UnsignedIntBE",
             "entityId": "UnsignedIntBE"
         }
+    },
+    "MoveEntityPacket": {
+        "id": 144,
+        "sentFrom": "server",
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE"
+        }
+    },
+    "MoveEntityPacket_PosRot": {
+        "id": 147,
+        "sentFrom": "server",
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE",
+            "pitch": "FloatBE",
+            "yaw": "FloatBE"
+        }
     }
 }
