@@ -103,5 +103,12 @@
             "speedY": "ShortBE",
             "speedZ": "ShortBE"
         }
+    },
+    "RemoveEntityPacket": {
+        "id": 141,
+        "sentFrom": "server",
+        "fields": {
+            "entityId": "UnsignedIntBE"
+        }
     }
 }
