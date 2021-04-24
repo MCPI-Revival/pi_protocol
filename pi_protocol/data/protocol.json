@@ -88,5 +88,20 @@
             "entityId": "UnsignedIntBE",
             "clientId": "UnsignedLongBE"
         }
+    },
+    "AddEntityPacket": {
+        "id": 140,
+        "sentFrom": "server",
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "type": "UnsignedByte",
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE",
+            "did": "UnsignedIntBE",
+            "speedX": "ShortBE",
+            "speedY": "ShortBE",
+            "speedZ": "ShortBE"
+        }
     }
 }
