@@ -62,5 +62,22 @@
             "yaw": "Byte",
             "metadata": "Metadata"
         }
+    },
+    "AddPlayerPacket": {
+        "id": 137,
+        "sentFrom": "server",
+        "fields": {
+            "clientId": "UnsignedLongBE",
+            "username": "String",
+            "entityId": "UnsignedIntBE",
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE",
+            "pitch": "Byte",
+            "yaw": "Byte",
+            "item": "UnsignedShortBE",
+            "meta": "UnsignedShortBE",
+            "metadata": "Metadata"
+        }
     }
 }
