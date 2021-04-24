@@ -1,4 +1,5 @@
 {
+    "ProtocolVersion": 9,
     "LoginPacket": {
         "id": 130,
         "sentFrom": "client",
