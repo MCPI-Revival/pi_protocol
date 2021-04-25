@@ -167,5 +167,18 @@
             "pitch": "FloatBE",
             "yaw": "FloatBE"
         }
+    },
+    "PlaceBlockPacket": {
+        "id": 149,
+        "sentFrom": "both",
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "x": "IntBE",
+            "z": "IntBE",
+            "y": "Byte",
+            "block": "Byte",
+            "meta": "Byte",
+            "face": "Byte"
+        }
     }
 }
