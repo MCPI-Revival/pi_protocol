@@ -180,5 +180,15 @@
             "meta": "Byte",
             "face": "Byte"
         }
+    },
+    "RemoveBlockPacket": {
+        "id": 150,
+        "sentFrom": "both",
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "x": "IntBE",
+            "z": "IntBE",
+            "y": "Byte"
+        }
     }
 }
