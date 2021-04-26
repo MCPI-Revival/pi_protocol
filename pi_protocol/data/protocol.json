@@ -203,5 +203,15 @@
             "radious": "FloatBE",
             "records": "Records"
         }
+    },
+    "LevelEventPacket": {
+        "id": 154,
+        "fields": {
+            "eventId": "ShortBE",
+            "x": "ShortBE",
+            "y": "ShortBE",
+            "z": "ShortBE",
+            "data": "IntBE"
+        }
     }
 }
