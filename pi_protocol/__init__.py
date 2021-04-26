@@ -126,6 +126,8 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
                 m_value.append(stream.read_int_le())
                 result.append([m_type, m_value])
         return result
+    if data_type == "Records":
+        pass
 
 def encode_data_type(data_type: str, value: Union[int, float, str, list], stream: object) -> None:
     if data_type == "UnsignedByte":
@@ -198,6 +200,8 @@ def encode_data_type(data_type: str, value: Union[int, float, str, list], stream
                 stream.write_int_le(m_value[1])
                 stream.write_int_le(m_value[2])
         stream.write_byte(0x7f)
+    elif data_type == "Records":
+        pass
     
 def decode_packet(data: bytes) -> dict:
     stream: object = binary_stream(data)
