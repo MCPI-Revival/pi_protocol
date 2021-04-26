@@ -223,5 +223,12 @@
             "case1": "IntBE",
             "case2": "IntBE"
         }
+    },
+    "EntityEventPacket": {
+        "id": 156,
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "event": "UnsignedByte"
+        }
     }
 }
