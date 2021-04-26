@@ -1,7 +1,6 @@
 {
     "LoginPacket": {
         "id": 130,
-        "sentFrom": "client",
         "fields": {
             "username": "String",
             "protocol1": "UnsignedIntBE",
@@ -10,35 +9,30 @@
     },
     "LoginStatusPacket": {
         "id": 131,
-        "sentFrom": "server",
         "fields": {
             "status": "UnsignedIntBE"
         }
     },
     "ReadyPacket": {
         "id": 132,
-        "sentFrom": "client",
         "fields": {
             "status": "UnsignedByte"
         }
     },
     "MessagePacket": {
         "id": 133,
-        "sentFrom": "server",
         "fields": {
             "message": "String"
         }
     },
     "SetTimePacket": {
         "id": 134,
-        "sentFrom": "server",
         "fields": {
             "time": "UnsignedIntBE"
         }
     },
     "StartGamePacket": {
         "id": 135,
-        "sentFrom": "server",
         "fields": {
             "seed": "UnsignedIntBE",
             "generator": "UnsignedIntBE",
@@ -51,7 +45,6 @@
     },
     "AddMobPacket": {
         "id": 136,
-        "sentFrom": "server",
         "fields": {
             "entityId": "UnsignedIntBE",
             "type": "UnsignedIntBE",
@@ -65,7 +58,6 @@
     },
     "AddPlayerPacket": {
         "id": 137,
-        "sentFrom": "server",
         "fields": {
             "clientId": "UnsignedLongBE",
             "username": "String",
@@ -82,7 +74,6 @@
     },
     "RemovePlayerPacket": {
         "id": 138,
-        "sentFrom": "server",
         "fields": {
             "entityId": "UnsignedIntBE",
             "clientId": "UnsignedLongBE"
@@ -90,7 +81,6 @@
     },
     "AddEntityPacket": {
         "id": 140,
-        "sentFrom": "server",
         "fields": {
             "entityId": "UnsignedIntBE",
             "type": "UnsignedByte",
@@ -105,14 +95,12 @@
     },
     "RemoveEntityPacket": {
         "id": 141,
-        "sentFrom": "server",
         "fields": {
             "entityId": "UnsignedIntBE"
         }
     },
     "AddItemEntityPacket": {
         "id": 142,
-        "sentFrom": "server",
         "fields": {
             "entityId": "UnsignedIntBE",
             "block": "UnsignedShortBE",
@@ -128,7 +116,6 @@
     },
     "TakeItemEntityPacket": {
         "id": 143,
-        "sentFrom": "server",
         "fields": {
             "target": "UnsignedIntBE",
             "entityId": "UnsignedIntBE"
@@ -136,7 +123,6 @@
     },
     "MoveEntityPacket": {
         "id": 144,
-        "sentFrom": "server",
         "fields": {
             "entityId": "UnsignedIntBE",
             "x": "FloatBE",
@@ -146,7 +132,6 @@
     },
     "MoveEntityPacket_PosRot": {
         "id": 147,
-        "sentFrom": "server",
         "fields": {
             "entityId": "UnsignedIntBE",
             "x": "FloatBE",
@@ -158,7 +143,6 @@
     },
     "MovePlayerPacket": {
         "id": 148,
-        "sentFrom": "both",
         "fields": {
             "entityId": "UnsignedIntBE",
             "x": "FloatBE",
@@ -170,7 +154,6 @@
     },
     "PlaceBlockPacket": {
         "id": 149,
-        "sentFrom": "both",
         "fields": {
             "entityId": "UnsignedIntBE",
             "x": "IntBE",
@@ -183,7 +166,6 @@
     },
     "RemoveBlockPacket": {
         "id": 150,
-        "sentFrom": "both",
         "fields": {
             "entityId": "UnsignedIntBE",
             "x": "IntBE",
