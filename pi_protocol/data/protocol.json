@@ -176,7 +176,6 @@
     "UpdateBlockPacket": {
         "id": 151,
         "fields": {
-            "entityId": "UnsignedIntBE",
             "x": "IntBE",
             "z": "IntBE",
             "y": "Byte",
