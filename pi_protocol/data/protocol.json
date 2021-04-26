@@ -230,5 +230,12 @@
             "entityId": "UnsignedIntBE",
             "event": "UnsignedByte"
         }
+    },
+    "RequestChunkPacket": {
+        "id": 157,
+        "fields": {
+            "x": "IntBE",
+            "z": "IntBE"
+        }
     }
 }
