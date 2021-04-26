@@ -193,5 +193,15 @@
             "direction": "UnsignedIntBE",
             "title": "String"
         }
+    },
+    "ExplodePacket": {
+        "id": 153,
+        "fields": {
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE",
+            "radious": "FloatBE",
+            "records": "Records"
+        }
     }
 }
