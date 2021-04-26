@@ -182,5 +182,16 @@
             "block": "Byte",
             "meta": "Byte"
         }
+    },
+    "AddPaintingPacket": {
+        "id": 152,
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "x": "IntBE",
+            "y": "IntBE",
+            "z": "IntBE",
+            "direction": "UnsignedIntBE",
+            "title": "String"
+        }
     }
 }
