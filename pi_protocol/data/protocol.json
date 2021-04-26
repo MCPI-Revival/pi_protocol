@@ -213,5 +213,15 @@
             "z": "ShortBE",
             "data": "IntBE"
         }
+    },
+    "TileEventPacket": {
+        "id": 155,
+        "fields": {
+            "x": "IntBE",
+            "y": "IntBE",
+            "z": "IntBE",
+            "case1": "IntBE",
+            "case2": "IntBE"
+        }
     }
 }
