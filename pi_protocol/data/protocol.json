@@ -172,5 +172,16 @@
             "z": "IntBE",
             "y": "Byte"
         }
+    },
+    "UpdateBlockPacket": {
+        "id": 151,
+        "fields": {
+            "entityId": "UnsignedIntBE",
+            "x": "IntBE",
+            "z": "IntBE",
+            "y": "Byte",
+            "block": "Byte",
+            "meta": "Byte"
+        }
     }
 }
