@@ -237,5 +237,14 @@
             "x": "IntBE",
             "z": "IntBE"
         }
+    },
+    "ChunkDataPacket": {
+        "id": 158,
+        "fields": {
+            "x": "IntBE",
+            "z": "IntBE",
+            "notLoaded": "Byte",
+            "data": "ChunkData"
+        }
     }
 }
