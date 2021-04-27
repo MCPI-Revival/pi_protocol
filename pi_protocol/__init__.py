@@ -136,6 +136,8 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
             index.append(stream.read_byte())
             records.append(index)
         return records
+    if data_type == "ChunkData":
+        pass
 
 def encode_data_type(data_type: str, value: Union[int, float, str, list], stream: object) -> None:
     if data_type == "UnsignedByte":
@@ -214,6 +216,8 @@ def encode_data_type(data_type: str, value: Union[int, float, str, list], stream
             stream.write_byte(index[0])
             stream.write_byte(index[1])
             stream.write_byte(index[2])
+    elif data_type == "ChunkData":
+        pass
     
 def decode_packet(data: bytes) -> dict:
     stream: object = binary_stream(data)
