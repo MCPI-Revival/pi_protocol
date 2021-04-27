@@ -243,7 +243,6 @@
         "fields": {
             "x": "IntBE",
             "z": "IntBE",
-            "notLoaded": "Byte",
             "data": "ChunkData"
         }
     }
