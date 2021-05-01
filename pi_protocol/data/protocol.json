@@ -271,5 +271,20 @@
             "entityId": "IntBE",
             "target": "IntBE"
         }
+    },
+    "UseItemPacket": {
+        "id": 162,
+        "fields": {
+            "x": "IntBE",
+            "y": "IntBE",
+            "z": "IntBE",
+            "face": "IntBE",
+            "block": "UnsignedShortBE",
+            "meta": "UnsignedByte",
+            "entityId": "IntBE",
+            "fx": "FloatBE",
+            "fy": "FloatBE",
+            "fz": "FloatBE"
+        }
     }
 }
