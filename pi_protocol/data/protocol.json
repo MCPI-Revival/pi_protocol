@@ -253,5 +253,15 @@
             "block": "UnsignedShortBE",
             "meta": "UnsignedShortBE"
         }
+    },
+    "PlayerArmorEquipmentPacket": {
+        "id": 160,
+        "fields": {
+            "entityId": "IntBE",
+            "slot0": "UnsignedByteBE",
+            "slot1": "UnsignedByteBE",
+            "slot2": "UnsignedByteBE",
+            "slot3": "UnsignedByteBE"
+        }
     }
 }
