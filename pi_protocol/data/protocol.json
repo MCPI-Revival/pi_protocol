@@ -258,10 +258,18 @@
         "id": 160,
         "fields": {
             "entityId": "IntBE",
-            "slot0": "UnsignedByteBE",
-            "slot1": "UnsignedByteBE",
-            "slot2": "UnsignedByteBE",
-            "slot3": "UnsignedByteBE"
+            "slot0": "UnsignedByte",
+            "slot1": "UnsignedByte",
+            "slot2": "UnsignedByte",
+            "slot3": "UnsignedByte"
+        }
+    },
+    "InteractPacket": {
+        "id": 161,
+        "fields": {
+            "action": "UnsignedByte",
+            "entityId": "IntBE",
+            "target": "IntBE"
         }
     }
 }
