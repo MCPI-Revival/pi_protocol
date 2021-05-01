@@ -128,7 +128,7 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
         return result
     if data_type == "Records":
         records: list = []
-        count: int = stream.read_unsigned_int_be()
+        count: int = stream.read_int_be()
         for i in range(0, count):
             index: list = []
             index.append(stream.read_byte())
@@ -211,7 +211,7 @@ def encode_data_type(data_type: str, value: Union[int, float, str, list], stream
                 stream.write_int_le(m_value[2])
         stream.write_byte(0x7f)
     elif data_type == "Records":
-        stream.write_unsigned_int_be(len(value))
+        stream.write_int_be(len(value))
         for index in value:
             stream.write_byte(index[0])
             stream.write_byte(index[1])
