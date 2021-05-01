@@ -245,5 +245,13 @@
             "z": "IntBE",
             "data": "ChunkData"
         }
+    },
+    "PlayerEquipmentPacket": {
+        "id": 159,
+        "fields": {
+            "entityId": "IntBE",
+            "block": "UnsignedShortBE",
+            "meta": "UnsignedShortBE"
+        }
     }
 }
