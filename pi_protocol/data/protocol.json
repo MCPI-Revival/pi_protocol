@@ -3,14 +3,14 @@
         "id": 130,
         "fields": {
             "username": "String",
-            "protocol1": "UnsignedIntBE",
-            "protocol2": "UnsignedIntBE"
+            "protocol1": "IntBE",
+            "protocol2": "IntBE"
         }
     },
     "LoginStatusPacket": {
         "id": 131,
         "fields": {
-            "status": "UnsignedIntBE"
+            "status": "IntBE"
         }
     },
     "ReadyPacket": {
@@ -28,16 +28,16 @@
     "SetTimePacket": {
         "id": 134,
         "fields": {
-            "time": "UnsignedIntBE"
+            "time": "IntBE"
         }
     },
     "StartGamePacket": {
         "id": 135,
         "fields": {
-            "seed": "UnsignedIntBE",
-            "generator": "UnsignedIntBE",
-            "gamemode": "UnsignedIntBE",
-            "entityId": "UnsignedIntBE",
+            "seed": "IntBE",
+            "generator": "IntBE",
+            "gamemode": "IntBE",
+            "entityId": "IntBE",
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE"
@@ -46,8 +46,8 @@
     "AddMobPacket": {
         "id": 136,
         "fields": {
-            "entityId": "UnsignedIntBE",
-            "type": "UnsignedIntBE",
+            "entityId": "IntBE",
+            "type": "IntBE",
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE",
@@ -61,28 +61,28 @@
         "fields": {
             "clientId": "UnsignedLongBE",
             "username": "String",
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE",
             "pitch": "Byte",
             "yaw": "Byte",
-            "item": "UnsignedShortBE",
-            "meta": "UnsignedShortBE",
+            "item": "ShortBE",
+            "meta": "ShortBE",
             "metadata": "Metadata"
         }
     },
     "RemovePlayerPacket": {
         "id": 138,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "clientId": "UnsignedLongBE"
         }
     },
     "AddEntityPacket": {
         "id": 140,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "type": "UnsignedByte",
             "x": "FloatBE",
             "y": "FloatBE",
@@ -96,16 +96,16 @@
     "RemoveEntityPacket": {
         "id": 141,
         "fields": {
-            "entityId": "UnsignedIntBE"
+            "entityId": "IntBE"
         }
     },
     "AddItemEntityPacket": {
         "id": 142,
         "fields": {
-            "entityId": "UnsignedIntBE",
-            "block": "UnsignedShortBE",
-            "stack": "Byte",
-            "meta": "UnsignedShortBE",
+            "entityId": "IntBE",
+            "block": "ShortBE",
+            "stack": "UnsignedByte",
+            "meta": "ShortBE",
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE",
@@ -117,14 +117,14 @@
     "TakeItemEntityPacket": {
         "id": 143,
         "fields": {
-            "target": "UnsignedIntBE",
-            "entityId": "UnsignedIntBE"
+            "target": "IntBE",
+            "entityId": "IntBE"
         }
     },
     "MoveEntityPacket": {
         "id": 144,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE"
@@ -133,7 +133,7 @@
     "MoveEntityPacket_PosRot": {
         "id": 147,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE",
@@ -144,7 +144,7 @@
     "MovePlayerPacket": {
         "id": 148,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE",
@@ -155,22 +155,22 @@
     "PlaceBlockPacket": {
         "id": 149,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "x": "IntBE",
             "z": "IntBE",
-            "y": "Byte",
-            "block": "Byte",
-            "meta": "Byte",
-            "face": "Byte"
+            "y": "UnsignedByte",
+            "block": "UnsignedByte",
+            "meta": "UnsignedByte",
+            "face": "UnsignedByte"
         }
     },
     "RemoveBlockPacket": {
         "id": 150,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "x": "IntBE",
             "z": "IntBE",
-            "y": "Byte"
+            "y": "UnsignedByte"
         }
     },
     "UpdateBlockPacket": {
@@ -178,19 +178,19 @@
         "fields": {
             "x": "IntBE",
             "z": "IntBE",
-            "y": "Byte",
-            "block": "Byte",
-            "meta": "Byte"
+            "y": "UnsignedByte",
+            "block": "UnsignedByte",
+            "meta": "UnsignedByte"
         }
     },
     "AddPaintingPacket": {
         "id": 152,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "x": "IntBE",
             "y": "IntBE",
             "z": "IntBE",
-            "direction": "UnsignedIntBE",
+            "direction": "IntBE",
             "title": "String"
         }
     },
@@ -227,7 +227,7 @@
     "EntityEventPacket": {
         "id": 156,
         "fields": {
-            "entityId": "UnsignedIntBE",
+            "entityId": "IntBE",
             "event": "UnsignedByte"
         }
     },
