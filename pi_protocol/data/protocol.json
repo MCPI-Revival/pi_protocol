@@ -426,5 +426,11 @@
             "z": "ShortBE",
             "lines": "String"
         }
+    },
+    "AdventureSettingsPacket": {
+        "id": 182,
+        "fields": {
+            "flags": "UnsignedIntBE"
+        }
     }
 }
