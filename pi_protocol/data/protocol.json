@@ -397,5 +397,12 @@
             "property": "ShortBE",
             "value": "ShortBE"
         }
+    },
+    "ContainerSetContentPacket": {
+        "id": 178,
+        "fields": {
+            "windowId": "UnsignedByte",
+            "slots": "Items"
+        }
     }
 }
