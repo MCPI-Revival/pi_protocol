@@ -286,5 +286,16 @@
             "fy": "FloatBE",
             "fz": "FloatBE"
         }
+    },
+    "PlayerActionPacket": {
+        "id": 163,
+        "fields": {
+            "action": "IntBE",
+            "x": "IntBE",
+            "y": "IntBE",
+            "z": "IntBE",
+            "face": "IntBE",
+            "entityId": "IntBE"
+        }
     }
 }
