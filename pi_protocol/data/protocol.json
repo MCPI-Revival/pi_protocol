@@ -297,5 +297,11 @@
             "face": "IntBE",
             "entityId": "IntBE"
         }
+    },
+    "HurtArmorPacket": {
+        "id": 165,
+        "fields": {
+            "health": "Byte"
+        }
     }
 }
