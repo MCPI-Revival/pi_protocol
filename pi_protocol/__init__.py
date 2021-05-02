@@ -157,6 +157,12 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
             item.append(stream.read_short_be())
             items.append(item)
         return items
+    if data_type == "Item":
+        item: list = []
+        item.append(stream.read_short_be())
+        item.append(stream.read_byte())
+        item.append(stream.read_short_be())
+        return item
 
 def encode_data_type(data_type: str, value: Union[int, float, str, list], stream: object) -> None:
     if data_type == "UnsignedByte":
@@ -248,6 +254,10 @@ def encode_data_type(data_type: str, value: Union[int, float, str, list], stream
             stream.write_short_be(item[0])
             stream.write_byte(item[1])
             stream.write_short_be(item[3])
+    elif data_type == "Item":
+        stream.write_short_be(value[0])
+        stream.write_byte(value[1])
+        stream.write_short_be(value[3])
     
 def decode_packet(data: bytes) -> dict:
     stream: object = binary_stream(data)
