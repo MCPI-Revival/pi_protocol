@@ -310,5 +310,14 @@
             "entityId": "IntBE",
             "metadata": "Metadata"
         }
+    },
+    "SetEntityMotionPacket": {
+        "id": 167,
+        "fields": {
+            "entityId": "IntBE",
+            "speedX": "ShortBE",
+            "speedY": "ShortBE",
+            "speedZ": "ShortBE"
+        }
     }
 }
