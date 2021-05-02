@@ -381,5 +381,13 @@
         "fields": {
             "windowId": "UnsignedByte"
         }
+    },
+    "ContainerSetSlotPacket": {
+        "id": 176,
+        "fields": {
+            "windowId": "UnsignedByte",
+            "slot": "UnsignedShort",
+            "item": "Item"
+        }
     }
 }
