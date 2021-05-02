@@ -303,5 +303,12 @@
         "fields": {
             "health": "Byte"
         }
+    },
+    "SetEntityDataPacket": {
+        "id": 166,
+        "fields": {
+            "entityId": "IntBE",
+            "metadata": "Metadata"
+        }
     }
 }
