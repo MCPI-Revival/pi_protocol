@@ -340,5 +340,14 @@
             "action": "UnsignedByte",
             "entityId": "IntBE"
         }
+    },
+    "RespawnPacket": {
+        "id": 171,
+        "fields": {
+            "entityId": "IntBE",
+            "x": "FloatBE",
+            "y": "FloatBE",
+            "z": "FloatBE"
+        }
     }
 }
