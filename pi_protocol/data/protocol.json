@@ -366,5 +366,14 @@
             "type": "UnsignedByte",
             "item": "Item"
         }
+    },
+    "ContainerOpenPacket": {
+        "id": 174,
+        "fields": {
+            "windowId": "UnsignedByte",
+            "type": "UnsignedByte",
+            "slot": "UnsignedByte",
+            "title": "String"
+        }
     }
 }
