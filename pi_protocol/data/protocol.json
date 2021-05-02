@@ -386,8 +386,16 @@
         "id": 176,
         "fields": {
             "windowId": "UnsignedByte",
-            "slot": "UnsignedShort",
+            "slot": "UnsignedShortBE",
             "item": "Item"
+        }
+    },
+    "ContainerSetDataPacket": {
+        "id": 177,
+        "fields": {
+            "windowId": "UnsignedByte",
+            "property": "ShortBE",
+            "value": "ShortBE"
         }
     }
 }
