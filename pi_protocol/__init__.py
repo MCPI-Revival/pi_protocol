@@ -248,16 +248,16 @@ def encode_data_type(data_type: str, value: Union[int, float, str, list], stream
         for item in value:
             stream.write_short_be(item[0])
             stream.write_byte(item[1])
-            stream.write_short_be(item[3])
+            stream.write_short_be(item[2])
     elif data_type == "Armor":
         for item in value:
             stream.write_short_be(item[0])
             stream.write_byte(item[1])
-            stream.write_short_be(item[3])
+            stream.write_short_be(item[2])
     elif data_type == "Item":
         stream.write_short_be(value[0])
         stream.write_byte(value[1])
-        stream.write_short_be(value[3])
+        stream.write_short_be(value[2])
     
 def decode_packet(data: bytes) -> dict:
     stream: object = binary_stream(data)
