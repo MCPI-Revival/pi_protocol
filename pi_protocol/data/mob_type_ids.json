@@ -7,11 +7,11 @@
     },
     "monster": {
         "zombie": {
-            "human": 0x20,
-            "pig": 0x24
+            "human": 32,
+            "pig": 36
         },
-        "creeper": 0x21,
-        "skeleton": 0x22,
-        "spider": 0x23
+        "creeper": 33,
+        "skeleton": 34,
+        "spider": 35
     }
 }
