@@ -417,5 +417,14 @@
         "fields": {
             "message": "String"
         }
+    },
+    "SignUpdatePacket": {
+        "id": 181,
+        "fields": {
+            "x": "ShortBE",
+            "y": "UnsignedByte",
+            "z": "ShortBE",
+            "lines": "String"
+        }
     }
 }
