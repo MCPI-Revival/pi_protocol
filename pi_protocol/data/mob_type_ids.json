@@ -1,0 +1,17 @@
+{
+    "animal": {
+        "chicken": 10,
+        "cow": 11,
+        "pig": 12,
+        "sheep": 13
+    },
+    "monster": {
+        "zombie": {
+            "human": 0x20,
+            "pig": 0x24
+        },
+        "creeper": 0x21,
+        "skeleton": 0x22,
+        "spider": 0x23
+    }
+}
