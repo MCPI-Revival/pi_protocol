@@ -404,5 +404,12 @@
             "windowId": "UnsignedByte",
             "slots": "Items"
         }
+    },
+    "ContainerAckPacket": {
+        "id": 179,
+        "fields": {
+            "windowId": "UnsignedByte",
+            "unknown1": "ShortBE"
+        }
     }
 }
