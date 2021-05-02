@@ -355,7 +355,7 @@
         "fields": {
             "entityId": "IntBE",
             "windowId": "UnsignedByte",
-            "slots": "Slots",
+            "slots": "Items",
             "armor": "Armor"
         }
     }
