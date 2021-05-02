@@ -375,5 +375,11 @@
             "slot": "UnsignedByte",
             "title": "String"
         }
+    },
+    "ContainerClosePacket": {
+        "id": 175,
+        "fields": {
+            "windowId": "UnsignedByte"
+        }
     }
 }
