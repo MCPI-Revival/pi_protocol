@@ -325,5 +325,13 @@
         "fields": {
             "health": "UnsignedByte"
         }
+    },
+    "SetSpawnPositionPacket": {
+        "id": 169,
+        "fields": {
+            "x": "IntBE",
+            "z": "IntBE",
+            "y": "UnsignedByte"
+        }
     }
 }
