@@ -411,5 +411,11 @@
             "windowId": "UnsignedByte",
             "unknown1": "ShortBE"
         }
+    },
+    "ChatPacket": {
+        "id": 180,
+        "fields": {
+            "message": "String"
+        }
     }
 }
