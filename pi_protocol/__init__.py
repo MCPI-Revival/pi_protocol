@@ -148,6 +148,15 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
             item.append(stream.read_short_be())
             items.append(item)
         return items
+    if data_type == "Armor":
+        items: list = []
+        for i in range(0, 4):
+            item: list = []
+            item.append(stream.read_short_be())
+            item.append(stream.read_byte())
+            item.append(stream.read_short_be())
+            items.append(item)
+        return items
 
 def encode_data_type(data_type: str, value: Union[int, float, str, list], stream: object) -> None:
     if data_type == "UnsignedByte":
@@ -230,6 +239,11 @@ def encode_data_type(data_type: str, value: Union[int, float, str, list], stream
         pass
     elif data_type == "Items":
         stream.write_unsigned_short_be(len(value))
+        for item in value:
+            stream.write_short_be(item[0])
+            stream.write_byte(item[1])
+            stream.write_short_be(item[3])
+    elif data_type == "Armor":
         for item in value:
             stream.write_short_be(item[0])
             stream.write_byte(item[1])
