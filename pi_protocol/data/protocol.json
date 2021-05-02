@@ -103,9 +103,7 @@
         "id": 142,
         "fields": {
             "entityId": "IntBE",
-            "block": "ShortBE",
-            "stack": "UnsignedByte",
-            "meta": "ShortBE",
+            "item": "Item",
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE",
