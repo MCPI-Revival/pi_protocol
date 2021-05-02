@@ -349,5 +349,14 @@
             "y": "FloatBE",
             "z": "FloatBE"
         }
+    },
+    "SendInventoryPacket": {
+        "id": 172,
+        "fields": {
+            "entityId": "IntBE",
+            "windowId": "UnsignedByte",
+            "slots": "Slots",
+            "armor": "Armor"
+        }
     }
 }
