@@ -358,5 +358,13 @@
             "slots": "Items",
             "armor": "Armor"
         }
+    },
+    "DropItemPacket": {
+        "id": 173,
+        "fields": {
+            "entityId": "IntBE",
+            "type": "UnsignedByte",
+            "item": "Item"
+        }
     }
 }
