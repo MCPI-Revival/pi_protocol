@@ -333,5 +333,12 @@
             "z": "IntBE",
             "y": "UnsignedByte"
         }
+    },
+    "AnimatePacket": {
+        "id": 170,
+        "fields": {
+            "action": "UnsignedByte",
+            "entityId": "IntBE"
+        }
     }
 }
