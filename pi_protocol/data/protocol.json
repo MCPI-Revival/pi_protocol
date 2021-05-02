@@ -319,5 +319,11 @@
             "speedY": "ShortBE",
             "speedZ": "ShortBE"
         }
+    },
+    "SetHealthPacket": {
+        "id": 168,
+        "fields": {
+            "health": "UnsignedByte"
+        }
     }
 }
