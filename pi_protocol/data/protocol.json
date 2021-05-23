@@ -87,7 +87,7 @@
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE",
-            "did": "IntBE",
+            "hasMotion": "IntBE",
             "speedX": "ShortBE",
             "speedY": "ShortBE",
             "speedZ": "ShortBE"
