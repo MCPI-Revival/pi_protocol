@@ -44,7 +44,7 @@ def get_packet_fields(packet_id: int) -> dict:
         if packet["id"] == packet_id:
             return packet["fields"]
 
-def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, list]:
+def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, list, bytes]:
     if data_type == "UnsignedByte":
         return stream.read_unsigned_byte()
     if data_type == "Byte":
@@ -137,7 +137,7 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
             records.append(index)
         return records
     if data_type == "ChunkData":
-        pass
+        return stream.read(49408)
     if data_type == "Items":
         count: int = stream.read_unsigned_short_be()
         items: list = []
@@ -164,7 +164,7 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
         item.append(stream.read_short_be())
         return item
 
-def encode_data_type(data_type: str, value: Union[int, float, str, list], stream: object) -> None:
+def encode_data_type(data_type: str, value: Union[int, float, str, list, bytes], stream: object) -> None:
     if data_type == "UnsignedByte":
         stream.write_unsigned_byte(value)
     elif data_type == "Byte":
@@ -242,7 +242,7 @@ def encode_data_type(data_type: str, value: Union[int, float, str, list], stream
             stream.write_byte(index[1])
             stream.write_byte(index[2])
     elif data_type == "ChunkData":
-        pass
+        stream.write(value)
     elif data_type == "Items":
         stream.write_unsigned_short_be(len(value))
         for item in value:
@@ -267,7 +267,7 @@ def decode_packet(data: bytes) -> dict:
         packet: dict = {"id": packet_id}
         for field_name, field_type in packet_fields.items():
             if not stream.feos():
-                packet[field_name]: Union[int, float, str, list] = decode_data_type(field_type, stream)
+                packet[field_name]: Union[int, float, str, list, bytes] = decode_data_type(field_type, stream)
         return packet
     else:
         return {}
