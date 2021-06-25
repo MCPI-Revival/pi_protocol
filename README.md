@@ -5,7 +5,7 @@
 ```
 import pi_protocol
 
-data: bytes = b"\x82\x05\x00Steve\x09\x00\x00\x00\x09\x00\x00\x00"
+data: bytes = b"\x82\x00\x05Steve\x00\x00\x00\x09\x00\x00\x00\x09"
 decoded_packet: dict = pi_protocol.decode_packet(data)
 print("Decoded your packet :)")
 print(decoded_packet)
