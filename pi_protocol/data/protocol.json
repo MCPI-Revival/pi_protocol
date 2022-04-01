@@ -198,7 +198,7 @@
             "x": "FloatBE",
             "y": "FloatBE",
             "z": "FloatBE",
-            "radious": "FloatBE",
+            "radius": "FloatBE",
             "records": "Records"
         }
     },
