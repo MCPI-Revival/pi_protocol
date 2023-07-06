@@ -408,7 +408,7 @@
         "fields": {
             "windowId": "UnsignedByte",
             "unknown1": "ShortBE",
-            "unknown2": "Bool",
+            "unknown2": "Bool"
         }
     },
     "ChatPacket": {
