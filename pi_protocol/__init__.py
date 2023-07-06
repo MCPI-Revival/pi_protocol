@@ -45,6 +45,8 @@ def get_packet_fields(packet_id: int) -> dict:
             return packet["fields"]
 
 def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, list, bytes]:
+    if data_type == "Bool":
+        return stream.read_bool()
     if data_type == "UnsignedByte":
         return stream.read_unsigned_byte()
     if data_type == "Byte":
@@ -165,7 +167,9 @@ def decode_data_type(data_type: str, stream: object) -> Union[int, float, str, l
         return item
 
 def encode_data_type(data_type: str, value: Union[int, float, str, list, bytes], stream: object) -> None:
-    if data_type == "UnsignedByte":
+    if data_type == "Bool":
+        stream.write_bool(value)
+    elif data_type == "UnsignedByte":
         stream.write_unsigned_byte(value)
     elif data_type == "Byte":
         stream.write_byte(value)
