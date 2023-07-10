@@ -67,8 +67,8 @@
             "z": "FloatBE",
             "pitch": "Byte",
             "yaw": "Byte",
-            "item": "ShortBE",
-            "meta": "ShortBE",
+            "heldItemId": "ShortBE",
+            "heldItemAux": "ShortBE",
             "metadata": "Metadata"
         }
     },
@@ -157,8 +157,8 @@
             "x": "IntBE",
             "z": "IntBE",
             "y": "UnsignedByte",
-            "block": "UnsignedByte",
-            "meta": "UnsignedByte",
+            "blockId": "UnsignedByte",
+            "blockAux": "UnsignedByte",
             "face": "UnsignedByte"
         }
     },
@@ -177,8 +177,8 @@
             "x": "IntBE",
             "z": "IntBE",
             "y": "UnsignedByte",
-            "block": "UnsignedByte",
-            "meta": "UnsignedByte"
+            "blockId": "UnsignedByte",
+            "blockAux": "UnsignedByte"
         }
     },
     "AddPaintingPacket": {
@@ -248,8 +248,8 @@
         "id": 159,
         "fields": {
             "entityId": "IntBE",
-            "block": "UnsignedShortBE",
-            "meta": "UnsignedShortBE"
+            "itemId": "UnsignedShortBE",
+            "itemAux": "UnsignedShortBE"
         }
     },
     "PlayerArmorEquipmentPacket": {
@@ -277,8 +277,8 @@
             "y": "IntBE",
             "z": "IntBE",
             "face": "IntBE",
-            "block": "UnsignedShortBE",
-            "meta": "UnsignedByte",
+            "itemId": "UnsignedShortBE",
+            "itemAux": "UnsignedByte",
             "entityId": "IntBE",
             "fx": "FloatBE",
             "fy": "FloatBE",
@@ -361,7 +361,7 @@
         "id": 173,
         "fields": {
             "entityId": "IntBE",
-            "type": "UnsignedByte",
+            "isDeath": "UnsignedByte",
             "item": "Item"
         }
     },
