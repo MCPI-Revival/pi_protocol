@@ -35,7 +35,7 @@
         "id": 135,
         "fields": {
             "seed": "IntBE",
-            "generator": "IntBE",
+            "generatorVersion": "IntBE",
             "gamemode": "IntBE",
             "entityId": "IntBE",
             "x": "FloatBE",
